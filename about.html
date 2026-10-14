@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>About Us — Diverse Patterns Institute for Inclusion</title>
+    <meta name="description"
+        content="Learn about Diverse Patterns Institute for Inclusion, our mission, board of directors, and grassroots approach to disability inclusion and accessibility in Nepal.">
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="assets/images/favicon.ico">
+    <!-- Material Symbols Outlined -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet">
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com" rel="preconnect">
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:ital,wght@0,400;0,600;0,700;1,400&amp;family=Plus+Jakarta+Sans:wght@500;600;700;800&amp;display=swap"
+        rel="stylesheet">
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script src="assets/js/tailwind.config.js"></script>
+    <!-- Custom CSS -->
+    <link href="assets/css/style.css" rel="stylesheet">
+</head>
+
+<body
+    class="bg-white text-on-surface font-body antialiased min-h-screen flex flex-col selection:bg-purple-100 selection:text-purple-900">
+    <!-- Accessible Skip Link -->
+    <a class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 z-50 px-6 py-3 bg-secondary text-white font-sans font-semibold rounded-lg shadow-xl ring-4 ring-primary"
+        href="#main-content">
+        Skip to main content
+    </a>
+
+    <!-- Accessibility Utility Bar -->
+    <section class="bg-white border-b border-slate-200 py-2.5 px-6 md:px-12 text-sm text-slate-600">
+        <div class="max-w-7xl mx-auto flex flex-wrap justify-end items-center gap-3">
+            <button aria-label="Toggle text size between regular and large"
+                class="px-3 py-1.5 rounded-lg bg-white border border-slate-300 hover:bg-slate-50 font-sans text-sm flex items-center gap-1.5 transition-all shadow-sm"
+                id="toggle-font-size" type="button">
+                <span class="material-symbols-outlined text-base">format_size</span>
+                <span>Text: <strong id="font-status">Normal</strong></span>
+            </button>
+            <button aria-label="Toggle high contrast reading mode"
+                class="px-3 py-1.5 rounded-lg bg-white border border-slate-300 hover:bg-slate-50 font-sans text-sm flex items-center gap-1.5 transition-all shadow-sm"
+                id="toggle-contrast" type="button">
+                <span class="material-symbols-outlined text-base">contrast</span>
+                <span>Contrast</span>
+            </button>
+        </div>
+    </section>
+
+    <!-- Top Navigation -->
+    <header class="bg-white border-b border-slate-200 sticky top-0 z-40 bg-white/95 backdrop-blur-sm">
+        <div class="flex justify-between items-center w-full px-6 md:px-12 max-w-7xl mx-auto h-20">
+            <a aria-label="Diverse Patterns Institute for Inclusion Home"
+                class="flex items-center gap-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary" href="index.html">
+                <img alt="Diverse Patterns Institute for Inclusion" class="h-10 md:h-11 w-auto object-contain"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuBTe_alG-i_mPQO66NN1PKQ1j9rz8rGcPWYOn0bNqjwWmgBoFQpIWtDq-EbBAc5YJUVAOumwlsUGCjFFwtXSOjHS-xEUAxuwtaHCrASsOnCD_LYgp1esnhieG_gc6vCtFd3OVdRPnQrfH6uDfDbE7WFRRMFJdNQ7VXwQ46q9KBG52oN-fXk_KfGoArgXj2Le-_FFeuE1yiVmtYZWCnmKlHe3ewho6O0_GuF9Wnz76-XqNk-xqMfhdUIf63mMk3IUYFDios">
+            </a>
+            <nav aria-label="Primary Navigation"
+                class="hidden lg:flex items-center gap-7 font-sans text-base font-semibold text-slate-700">
+                <a class="hover:text-primary transition-colors py-1" href="index.html">Home</a>
+                <a class="text-primary font-bold border-b-2 border-primary py-1" href="about.html">About Us</a>
+                <a class="hover:text-primary transition-colors py-1" href="what-we-do.html">What We Do</a>
+                <a class="hover:text-primary transition-colors py-1" href="get-involved.html">Get Involved</a>
+                <a class="hover:text-primary transition-colors py-1" href="contact.html">Contact Us</a>
+            </nav>
+            <div class="flex items-center gap-3">
+                <a class="hidden sm:inline-flex items-center justify-center h-11 px-6 rounded-xl bg-primary text-white font-sans text-base font-semibold hover:bg-primary-hover shadow-sm transition-all"
+                    href="get-involved.html">
+                    Work With Us
+                </a>
+                <button aria-label="Open mobile menu"
+                    class="lg:hidden p-2.5 rounded-xl border border-slate-300 text-slate-700 hover:bg-slate-50"
+                    id="mobile-menu-btn" type="button">
+                    <span class="material-symbols-outlined text-3xl">menu</span>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div class="hidden lg:hidden border-t border-slate-200 bg-white px-6 py-4 space-y-3 font-sans text-base font-medium"
+            id="mobile-menu">
+            <a class="block py-2 text-slate-800" href="index.html">Home</a>
+            <a class="block py-2 text-primary font-bold" href="about.html">About Us</a>
+            <a class="block py-2 text-slate-800" href="what-we-do.html">What We Do</a>
+            <a class="block py-2 text-slate-800" href="get-involved.html">Get Involved</a>
+            <a class="block py-2 text-slate-800" href="contact.html">Contact Us</a>
+            <a class="block text-center py-3 rounded-xl bg-primary text-white font-semibold mt-2"
+                href="get-involved.html">Work With Us</a>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="flex-grow bg-white" id="main-content">
+        <!-- Hero Section (Subtle greyish off-white background) -->
+        <section class="py-14 md:py-24 border-b border-slate-200/80 bg-slate-100">
+            <div class="max-w-7xl mx-auto px-6 md:px-12">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
+                    <div class="lg:col-span-7 space-y-6">
+                        <div class="relative">
+                            <h1
+                                class="text-3xl sm:text-4xl md:text-5xl font-extrabold font-sans text-on-surface leading-[1.18] tracking-tight">
+                                About our Organization
+                            </h1>
+                            <!-- Hand-drawn decorative wave underline -->
+                            <svg class="w-56 h-4 text-secondary mt-3 overflow-visible" fill="none" viewBox="0 0 200 12"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path class="handdrawn-line" d="M3 8 C 30 2, 60 12, 95 6 C 130 1, 165 10, 197 5"
+                                    stroke="currentColor" stroke-linecap="round" stroke-width="3.5"></path>
+                            </svg>
+                        </div>
+                        <p class="text-xl md:text-2xl text-on-surface-variant leading-relaxed font-normal">
+                            Diverse Patterns Institute for Inclusion is a newly established nonprofit organization based in Kathmandu, Nepal. We promote disability inclusion, accessibility, learning, research, and knowledge sharing.
+                        </p>
+                    </div>
+                    <div class="lg:col-span-5 relative">
+                        <div class="bg-white rounded-2xl border border-slate-200 p-2.5 shadow-md">
+                            <img alt="Diverse Patterns Institute team and community leaders during Kathmandu session"
+                                class="w-full h-auto rounded-xl object-cover aspect-[4/3]"
+                                src="assets/images/hero_dpifi.jpeg">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Board of Directors Section (White background) -->
+        <section class="py-16 md:py-24 bg-white border-b border-slate-200/80">
+            <div class="max-w-7xl mx-auto px-6 md:px-12">
+                <div class="flex flex-col md:flex-row md:items-end justify-between mb-14 gap-4">
+                    <div>
+                        <span class="text-sm font-bold font-sans tracking-widest uppercase text-primary">Governance &amp; Leadership</span>
+                        <h2 class="text-3xl md:text-4xl font-extrabold font-sans text-on-surface mt-1.5">Board of Directors</h2>
+                    </div>
+                    <p class="text-base md:text-lg text-on-surface-variant max-w-md">
+                        Our board brings together multidisciplinary experience spanning technology, healthcare, education, and accessibility.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7">
+                    <!-- Director: Sagar Prasai -->
+                    <div class="p-7 rounded-2xl border-2 border-purple-200 bg-purple-50/30 hover:border-primary hover:shadow-md transition-all flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center gap-4 mb-5">
+                                <div class="w-16 h-16 rounded-2xl bg-primary text-white flex items-center justify-center font-sans text-2xl font-bold shadow-sm">
+                                    SP
+                                </div>
+                                <div>
+                                    <h3 class="font-sans font-bold text-xl text-on-surface">Sagar Prasai</h3>
+                                    <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-bold bg-purple-100 text-primary">President and Director</span>
+                                </div>
+                            </div>
+                            <p class="text-base text-slate-700 leading-relaxed">
+                                Sagar has a background in computer applications and development studies. His work focuses on disability inclusion, digital accessibility, research, and training.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Board Member: Sarita Prasai -->
+                    <div class="p-7 rounded-2xl border border-slate-200 bg-white hover:border-secondary hover:shadow-md transition-all flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center gap-4 mb-5">
+                                <div class="w-16 h-16 rounded-2xl bg-secondary text-white flex items-center justify-center font-sans text-2xl font-bold shadow-sm">
+                                    SP
+                                </div>
+                                <div>
+                                    <h3 class="font-sans font-bold text-xl text-on-surface">Sarita Prasai</h3>
+                                    <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-bold bg-sky-100 text-secondary">Board Member</span>
+                                </div>
+                            </div>
+                            <p class="text-base text-slate-700 leading-relaxed">
+                                Sarita is a nurse and holds a master's degree in Child Psychology, bringing healthcare insights and developmental understanding to inclusion.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Board Member: Muna Phuyal -->
+                    <div class="p-7 rounded-2xl border border-slate-200 bg-white hover:border-primary hover:shadow-md transition-all flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center gap-4 mb-5">
+                                <div class="w-16 h-16 rounded-2xl bg-purple-600 text-white flex items-center justify-center font-sans text-2xl font-bold shadow-sm">
+                                    MP
+                                </div>
+                                <div>
+                                    <h3 class="font-sans font-bold text-xl text-on-surface">Muna Phuyal</h3>
+                                    <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-bold bg-purple-100 text-primary">Board Member</span>
+                                </div>
+                            </div>
+                            <p class="text-base text-slate-700 leading-relaxed">
+                                Muna is currently pursuing a master's degree in Business Studies, contributing expertise in organizational coordination, planning, and finance.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Board Member: Bishal Basnet -->
+                    <div class="p-7 rounded-2xl border border-slate-200 bg-white hover:border-secondary hover:shadow-md transition-all flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center gap-4 mb-5">
+                                <div class="w-16 h-16 rounded-2xl bg-sky-700 text-white flex items-center justify-center font-sans text-2xl font-bold shadow-sm">
+                                    BB
+                                </div>
+                                <div>
+                                    <h3 class="font-sans font-bold text-xl text-on-surface">Bishal Basnet</h3>
+                                    <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-bold bg-sky-100 text-secondary">Board Member</span>
+                                </div>
+                            </div>
+                            <p class="text-base text-slate-700 leading-relaxed">
+                                Bishal is a college lecturer and holds a master's degree in Biology, advising on pedagogical methods, scientific research, and academic engagement.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Board Member: Santosh Ghimire -->
+                    <div class="p-7 rounded-2xl border border-slate-200 bg-white hover:border-primary hover:shadow-md transition-all flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center gap-4 mb-5">
+                                <div class="w-16 h-16 rounded-2xl bg-purple-700 text-white flex items-center justify-center font-sans text-2xl font-bold shadow-sm">
+                                    SG
+                                </div>
+                                <div>
+                                    <h3 class="font-sans font-bold text-xl text-on-surface">Santosh Ghimire</h3>
+                                    <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-bold bg-purple-100 text-primary">Board Member</span>
+                                </div>
+                            </div>
+                            <p class="text-base text-slate-700 leading-relaxed">
+                                Santosh is a sign language interpreter and a trained physical attendant trainer, bringing direct grassroots advocacy and communication expertise.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section (Primary Color background) -->
+        <section class="py-16 md:py-24 bg-primary text-center">
+            <div class="max-w-4xl mx-auto px-6 md:px-12 space-y-7">
+                <h2 class="text-3xl md:text-4xl font-extrabold font-sans text-white">
+                    Interested in Collaborating with Us?
+                </h2>
+                <p class="text-base md:text-xl text-purple-100 max-w-2xl mx-auto leading-relaxed">
+                    Whether you represent an organization, work in education or research, or simply want to support inclusion, we welcome your ideas and partnership.
+                </p>
+                <div class="pt-3 flex flex-wrap justify-center gap-4">
+                    <a class="inline-flex items-center justify-center h-14 px-8 rounded-xl bg-white text-primary font-sans text-base font-bold hover:bg-slate-100 shadow-md hover:shadow-lg transition-all"
+                        href="get-involved.html">
+                        Work With Us
+                        <span class="material-symbols-outlined ml-2 text-xl">arrow_forward</span>
+                    </a>
+                    <a class="inline-flex items-center justify-center h-14 px-8 rounded-xl border-2 border-white/80 text-white font-sans text-base font-bold hover:bg-white/10 transition-all shadow-sm"
+                        href="contact.html">
+                        Contact Us
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Dark Footer -->
+    <footer class="bg-slate-900 text-white border-t border-slate-800 mt-auto">
+        <div
+            class="max-w-7xl mx-auto px-6 py-12 md:px-12 flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
+            <div>
+                <div class="bg-white px-3 py-1.5 rounded-xl inline-block shadow-sm">
+                    <img alt="Diverse Patterns Institute for Inclusion" class="h-8 w-auto"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuBTe_alG-i_mPQO66NN1PKQ1j9rz8rGcPWYOn0bNqjwWmgBoFQpIWtDq-EbBAc5YJUVAOumwlsUGCjFFwtXSOjHS-xEUAxuwtaHCrASsOnCD_LYgp1esnhieG_gc6vCtFd3OVdRPnQrfH6uDfDbE7WFRRMFJdNQ7VXwQ46q9KBG52oN-fXk_KfGoArgXj2Le-_FFeuE1yiVmtYZWCnmKlHe3ewho6O0_GuF9Wnz76-XqNk-xqMfhdUIf63mMk3IUYFDios">
+                </div>
+            </div>
+            <nav class="flex flex-wrap gap-6 font-sans text-sm font-semibold text-white">
+                <a class="text-white hover:text-slate-300 transition-colors" href="index.html">Home</a>
+                <a class="text-white hover:text-slate-300 transition-colors" href="about.html">About Us</a>
+                <a class="text-white hover:text-slate-300 transition-colors" href="what-we-do.html">What We Do</a>
+                <a class="text-white hover:text-slate-300 transition-colors" href="get-involved.html">Get Involved</a>
+                <a class="text-white hover:text-slate-300 transition-colors" href="contact.html">Contact Us</a>
+            </nav>
+        </div>
+        <div class="border-t border-slate-800 py-6 px-6 md:px-12 flex flex-col sm:flex-row justify-between items-center gap-4 text-center sm:text-left text-sm text-white">
+            <p>© 2025 Diverse Patterns Institute for Inclusion</p>
+            <div class="flex flex-wrap items-center justify-center gap-6 text-sm">
+                <a class="text-white hover:text-slate-300 transition-colors" href="mailto:info@diversepatterns.org.np">info@diversepatterns.org.np</a>
+                <span class="text-slate-500 hidden sm:inline" aria-hidden="true">•</span>
+                <a class="text-white hover:text-slate-300 transition-colors" href="https://www.diversepatterns.org.np" target="_blank" rel="noopener">www.diversepatterns.org.np</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Main Scripts -->
+    <script src="assets/js/script.js"></script>
+</body>
+
+</html>

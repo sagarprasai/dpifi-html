@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="en" style="">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Diverse Patterns Institute for Inclusion — Kathmandu, Nepal</title>
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="assets/images/favicon.ico">
+    <!-- Material Symbols Outlined -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet">
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com" rel="preconnect">
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:ital,wght@0,400;0,600;0,700;1,400&amp;family=Plus+Jakarta+Sans:wght@500;600;700;800&amp;display=swap"
+        rel="stylesheet">
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script src="assets/js/tailwind.config.js"></script>
+    <!-- Custom CSS -->
+    <link href="assets/css/style.css" rel="stylesheet">
+</head>
+
+<body
+    class="bg-white text-on-surface font-body antialiased min-h-screen flex flex-col selection:bg-purple-100 selection:text-purple-900">
+    <!-- Accessible Skip Link -->
+    <a class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 z-50 px-6 py-3 bg-secondary text-white font-sans font-semibold rounded-lg shadow-xl ring-4 ring-primary"
+        href="#main-content">
+        Skip to main content
+    </a>
+    <!-- Accessibility Utility Bar -->
+    <section class="bg-white border-b border-slate-200 py-2.5 px-6 md:px-12 text-sm text-slate-600">
+        <div class="max-w-7xl mx-auto flex flex-wrap justify-end items-center gap-3">
+            <button aria-label="Toggle text size between regular and large"
+                class="px-3 py-1.5 rounded-lg bg-white border border-slate-300 hover:bg-slate-50 font-sans text-sm flex items-center gap-1.5 transition-all shadow-sm"
+                id="toggle-font-size" type="button">
+                <span class="material-symbols-outlined text-base">format_size</span>
+                <span>Text: <strong id="font-status">Normal</strong></span>
+            </button>
+            <button aria-label="Toggle high contrast reading mode"
+                class="px-3 py-1.5 rounded-lg bg-white border border-slate-300 hover:bg-slate-50 font-sans text-sm flex items-center gap-1.5 transition-all shadow-sm"
+                id="toggle-contrast" type="button">
+                <span class="material-symbols-outlined text-base">contrast</span>
+                <span>Contrast</span>
+            </button>
+        </div>
+    </section>
+    <!-- Top Navigation -->
+    <header class="bg-white border-b border-slate-200 sticky top-0 z-40 bg-white/95 backdrop-blur-sm">
+        <div class="flex justify-between items-center w-full px-6 md:px-12 max-w-7xl mx-auto h-20">
+            <a aria-label="Diverse Patterns Institute for Inclusion Home"
+                class="flex items-center gap-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary" href="index.html">
+                <img alt="Diverse Patterns Institute for Inclusion" class="h-10 md:h-11 w-auto object-contain"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuBTe_alG-i_mPQO66NN1PKQ1j9rz8rGcPWYOn0bNqjwWmgBoFQpIWtDq-EbBAc5YJUVAOumwlsUGCjFFwtXSOjHS-xEUAxuwtaHCrASsOnCD_LYgp1esnhieG_gc6vCtFd3OVdRPnQrfH6uDfDbE7WFRRMFJdNQ7VXwQ46q9KBG52oN-fXk_KfGoArgXj2Le-_FFeuE1yiVmtYZWCnmKlHe3ewho6O0_GuF9Wnz76-XqNk-xqMfhdUIf63mMk3IUYFDios">
+            </a>
+            <nav aria-label="Primary Navigation"
+                class="hidden lg:flex items-center gap-7 font-sans text-base font-semibold text-slate-700">
+                <a class="text-primary font-bold border-b-2 border-primary py-1" href="index.html">Home</a>
+                <a class="hover:text-primary transition-colors py-1" href="about.html">About Us</a>
+                <a class="hover:text-primary transition-colors py-1" href="what-we-do.html">What We Do</a>
+                <a class="hover:text-primary transition-colors py-1" href="get-involved.html">Get Involved</a>
+                <a class="hover:text-primary transition-colors py-1" href="contact.html">Contact Us</a>
+            </nav>
+            <div class="flex items-center gap-3">
+                <a class="hidden sm:inline-flex items-center justify-center h-11 px-6 rounded-xl bg-primary text-white font-sans text-base font-semibold hover:bg-primary-hover shadow-sm transition-all"
+                    href="get-involved.html">
+                    Work With Us
+                </a>
+                <button aria-label="Open mobile menu"
+                    class="lg:hidden p-2.5 rounded-xl border border-slate-300 text-slate-700 hover:bg-slate-50"
+                    id="mobile-menu-btn" type="button">
+                    <span class="material-symbols-outlined text-3xl">menu</span>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div class="hidden lg:hidden border-t border-slate-200 bg-white px-6 py-4 space-y-3 font-sans text-base font-medium"
+            id="mobile-menu">
+            <a class="block py-2 text-primary font-bold" href="index.html">Home</a>
+            <a class="block py-2 text-slate-800" href="about.html">About Us</a>
+            <a class="block py-2 text-slate-800" href="what-we-do.html">What We Do</a>
+            <a class="block py-2 text-slate-800" href="get-involved.html">Get Involved</a>
+            <a class="block py-2 text-slate-800" href="contact.html">Contact Us</a>
+            <a class="block text-center py-3 rounded-xl bg-primary text-white font-semibold mt-2"
+                href="get-involved.html">Work With Us</a>
+        </div>
+    </header>
+    <!-- Main Content -->
+    <main class="flex-grow bg-white" id="main-content">
+        <!-- Hero Section (Subtle greyish off-white background) -->
+        <section class="py-14 md:py-24 border-b border-slate-200/80 bg-slate-100">
+            <div class="max-w-7xl mx-auto px-6 md:px-12">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
+                    <!-- Hero Text -->
+                    <div class="lg:col-span-6 space-y-7">
+                        <div class="relative">
+                            <h1
+                                class="text-3xl sm:text-4xl md:text-5xl lg:text-[3.25rem] font-extrabold font-sans text-on-surface leading-[1.18] tracking-tight">
+                                Advancing Disability Inclusion &amp; Accessibility in Nepal
+                            </h1>
+                            <!-- Hand-drawn decorative wave underline -->
+                            <svg class="w-56 h-4 text-secondary mt-3 overflow-visible" fill="none" viewBox="0 0 200 12"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path class="handdrawn-line" d="M3 8 C 30 2, 60 12, 95 6 C 130 1, 165 10, 197 5"
+                                    stroke="currentColor" stroke-linecap="round" stroke-width="3.5"></path>
+                            </svg>
+                        </div>
+                        <p class="text-xl md:text-2xl text-on-surface-variant leading-relaxed max-w-2xl font-normal">
+                            Diverse Patterns Institute for Inclusion is a community-led institute co-creating practical, barrier-free pathways for civic
+                            participation, digital systems, and education across Nepal.
+                        </p>
+                        <div class="pt-2 flex flex-wrap gap-4 items-center">
+                            <a class="inline-flex items-center justify-center h-14 px-8 rounded-xl bg-primary text-white font-sans text-base font-bold hover:bg-primary-hover shadow-md hover:shadow-lg transition-all"
+                                href="what-we-do.html">
+                                Explore Our Focus
+                                <span class="material-symbols-outlined ml-2 text-xl">arrow_forward</span>
+                            </a>
+                        </div>
+                    </div>
+                    <!-- Hero Photo -->
+                    <div class="lg:col-span-6 relative">
+                        <div class="bg-white rounded-2xl border border-slate-200 p-2.5 shadow-md">
+                            <img alt="Diverse Patterns Institute team and community leaders during Kathmandu session"
+                                class="w-full h-auto rounded-xl object-cover aspect-[4/3]"
+                                src="assets/images/hero_dpifi.jpeg">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Concise Quote Section (White background) -->
+        <section class="py-16 md:py-20 bg-white border-b border-slate-200/80" id="about">
+            <div class="max-w-4xl mx-auto px-6 md:px-12 text-center space-y-5">
+                <p class="text-sm font-bold font-sans tracking-widest uppercase text-secondary">Our Core Purpose</p>
+                <blockquote class="text-2xl md:text-4xl font-bold font-sans text-on-surface leading-snug">
+                    “Everyone deserves equal opportunities to learn, participate, access information, and lead.”
+                </blockquote>
+            </div>
+        </section>
+        <!-- 4 Action Pillars (What We Do - Subtle greyish off-white background) -->
+        <section class="py-16 md:py-24 bg-slate-100 border-b border-slate-200/80" id="what-we-do">
+            <div class="max-w-7xl mx-auto px-6 md:px-12">
+                <div class="mb-14">
+                    <span class="text-sm font-bold font-sans tracking-widest uppercase text-primary">Focus
+                        Areas</span>
+                    <h2 class="text-3xl md:text-4xl font-extrabold font-sans text-on-surface mt-1.5">What We Do</h2>
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-7">
+                    <!-- Pillar 1: Inclusion & Accessibility -->
+                    <div
+                        class="bg-white p-7 rounded-2xl border border-slate-200 hover:border-purple-300 hover:shadow-md transition-all group flex flex-col">
+                        <div
+                            class="w-16 h-16 rounded-2xl bg-purple-50 text-primary flex items-center justify-center mb-6 group-hover:scale-105 transition-transform shadow-sm">
+                            <!-- Hand-drawn 2D Wheelchair / Accessibility SVG Icon -->
+                            <svg class="w-9 h-9" fill="none" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="16" cy="7" fill="#840076" r="3"></circle>
+                                <path class="handdrawn-line" d="M16 10 V 18 L 22 21 M16 18 H 11" stroke="#840076"
+                                    stroke-width="2.2"></path>
+                                <path class="handdrawn-line" d="M12 26 C 7.5 26, 6 22, 6 18 C 6 13.5, 9.5 12, 12 12"
+                                    stroke="#0284c7" stroke-width="2.2"></path>
+                                <circle cx="14" cy="24" fill="#0284c7" r="1.5"></circle>
+                            </svg>
+                        </div>
+                        <h3 class="font-sans font-bold text-xl md:text-2xl text-on-surface mb-3">Inclusion &amp; Accessibility</h3>
+                        <p class="text-base md:text-lg text-slate-600 leading-relaxed">
+                            Advancing barrier-free digital spaces, accessible infrastructure, and assistive tech
+                            access.
+                        </p>
+                    </div>
+                    <!-- Pillar 2: Research & Learning -->
+                    <div
+                        class="bg-white p-7 rounded-2xl border border-slate-200 hover:border-sky-300 hover:shadow-md transition-all group flex flex-col">
+                        <div
+                            class="w-16 h-16 rounded-2xl bg-sky-50 text-secondary flex items-center justify-center mb-6 group-hover:scale-105 transition-transform shadow-sm">
+                            <!-- Hand-drawn Notebook & Pen SVG Icon -->
+                            <svg class="w-9 h-9" fill="none" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+                                <path class="handdrawn-line"
+                                    d="M7 6 H 23 C 24.1 6, 25 6.9, 25 8 V 26 H 9 C 7.9 26, 7 25.1, 7 24 V 6 Z"
+                                    stroke="#0284c7" stroke-width="2.2"></path>
+                                <path class="handdrawn-line" d="M11 11 H 21 M11 16 H 18 M11 21 H 16"
+                                    stroke="#840076" stroke-width="2"></path>
+                                <path class="handdrawn-line" d="M23 4 L 27 8 L 22 13 L 18 9 Z" fill="#e0f2fe"
+                                    stroke="#0284c7" stroke-width="1.8"></path>
+                            </svg>
+                        </div>
+                        <h3 class="font-sans font-bold text-xl md:text-2xl text-on-surface mb-3">Research &amp; Learning</h3>
+                        <p class="text-base md:text-lg text-slate-600 leading-relaxed">
+                            Conducting participatory studies with persons with disabilities to document lived
+                            realities.
+                        </p>
+                    </div>
+                    <!-- Pillar 3: Toolkits & Resources -->
+                    <div
+                        class="bg-white p-7 rounded-2xl border border-slate-200 hover:border-purple-300 hover:shadow-md transition-all group flex flex-col">
+                        <div
+                            class="w-16 h-16 rounded-2xl bg-purple-50 text-primary flex items-center justify-center mb-6 group-hover:scale-105 transition-transform shadow-sm">
+                            <!-- Hand-drawn Open Toolkit SVG Icon -->
+                            <svg class="w-9 h-9" fill="none" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+                                <path class="handdrawn-line"
+                                    d="M6 11 H 26 V 25 C 26 26.1, 25.1 27, 24 27 H 8 C 6.9 27, 6 26.1, 6 25 V 11 Z"
+                                    stroke="#840076" stroke-width="2.2"></path>
+                                <path class="handdrawn-line"
+                                    d="M12 11 V 7 C 12 5.9, 12.9 5, 14 5 H 18 C 19.1 5, 20 5.9, 20 7 V 11"
+                                    stroke="#0284c7" stroke-width="2.2"></path>
+                                <circle cx="16" cy="18" fill="#840076" r="2"></circle>
+                                <path class="handdrawn-line" d="M10 16 H 14 M18 16 H 22" stroke="#840076"
+                                    stroke-width="1.8"></path>
+                            </svg>
+                        </div>
+                        <h3 class="font-sans font-bold text-xl md:text-2xl text-on-surface mb-3">Toolkits &amp; Resources</h3>
+                        <p class="text-base md:text-lg text-slate-600 leading-relaxed">
+                            Delivering open Nepali accessibility checklists, audits, and plain-language guides.
+                        </p>
+                    </div>
+                    <!-- Pillar 4: Awareness & Dialogue -->
+                    <div
+                        class="bg-white p-7 rounded-2xl border border-slate-200 hover:border-sky-300 hover:shadow-md transition-all group flex flex-col">
+                        <div
+                            class="w-16 h-16 rounded-2xl bg-sky-50 text-secondary flex items-center justify-center mb-6 group-hover:scale-105 transition-transform shadow-sm">
+                            <!-- Hand-drawn Friendly Conversation SVG Icon -->
+                            <svg class="w-9 h-9" fill="none" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+                                <path class="handdrawn-line"
+                                    d="M5 9 C 5 6.8, 6.8 5, 9 5 H 19 C 21.2 5, 23 6.8, 23 9 V 15 C 23 17.2, 21.2 19, 19 19 H 11 L 6 23 V 19 C 5.4 19, 5 18.6, 5 18 V 9 Z"
+                                    stroke="#0284c7" stroke-width="2.2"></path>
+                                <path class="handdrawn-line"
+                                    d="M23 12 H 25 C 26.1 12, 27 12.9, 27 14 V 20 C 27 21.1, 26.1 22, 25 22 V 25 L 21 22 H 18"
+                                    stroke="#840076" stroke-width="2"></path>
+                            </svg>
+                        </div>
+                        <h3 class="font-sans font-bold text-xl md:text-2xl text-on-surface mb-3">Awareness &amp; Dialogue</h3>
+                        <p class="text-base md:text-lg text-slate-600 leading-relaxed">
+                            Fostering active alliances between OPDs, municipal leaders, schools, and developers.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Approach Section (3 Quick Steps - White background) -->
+        <section class="py-16 md:py-24 bg-white border-b border-slate-200/80" id="approach">
+            <div class="max-w-7xl mx-auto px-6 md:px-12">
+                <div class="max-w-xl mb-14">
+                    <h2 class="text-3xl md:text-4xl font-extrabold font-sans text-on-surface mt-1.5">Our Approach</h2>
+                    <p class="text-base md:text-lg text-on-surface-variant mt-2">People with disabilities are primary leaders and
+                        innovators, not passive recipients.</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="p-7 rounded-2xl border border-slate-200 bg-slate-50/60 hover:bg-white hover:shadow-sm transition-all relative">
+                        <div class="text-4xl font-extrabold font-sans text-primary/90 mb-3">01</div>
+                        <h3 class="text-xl font-bold font-sans text-on-surface mb-2.5">Lived Experience</h3>
+                        <p class="text-base text-slate-600 leading-relaxed">Programs and audits led directly by people navigating
+                            physical, sensory, and cognitive barriers daily.</p>
+                    </div>
+                    <div class="p-7 rounded-2xl border border-slate-200 bg-slate-50/60 hover:bg-white hover:shadow-sm transition-all relative">
+                        <div class="text-4xl font-extrabold font-sans text-secondary/90 mb-3">02</div>
+                        <h3 class="text-xl font-bold font-sans text-on-surface mb-2.5">Practical Solutions</h3>
+                        <p class="text-base text-slate-600 leading-relaxed">Actionable, localized checklists and screen-reader
+                            protocols tailored specifically to Nepali digital platforms.</p>
+                    </div>
+                    <div class="p-7 rounded-2xl border border-slate-200 bg-slate-50/60 hover:bg-white hover:shadow-sm transition-all relative">
+                        <div class="text-4xl font-extrabold font-sans text-primary/90 mb-3">03</div>
+                        <h3 class="text-xl font-bold font-sans text-on-surface mb-2.5">Shared Action</h3>
+                        <p class="text-base text-slate-600 leading-relaxed">Enduring partnerships connecting grassroots
+                            organizations, government bodies, and civic tech teams.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Field Dispatch / Recent Work Spotlight (Subtle greyish off-white background) -->
+        <section class="py-16 md:py-24 bg-slate-100 border-b border-slate-200/80" id="work">
+            <div class="max-w-7xl mx-auto px-6 md:px-12">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
+                    <div class="lg:col-span-7">
+                        <div class="bg-white rounded-2xl border border-slate-200 p-2.5 shadow-md">
+                            <img alt="Community participants in Dang at the Digital Accessibility Overwatch Project"
+                                class="w-full h-auto rounded-xl object-cover"
+                                src="assets/images/digital_access.png">
+                        </div>
+                    </div>
+                    <div class="lg:col-span-5 space-y-6">
+                        <div
+                            class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-purple-200 bg-purple-50 text-primary font-sans text-sm font-bold uppercase">
+                            <span class="material-symbols-outlined text-base">campaign</span> Featured Project
+                        </div>
+                        <h2 class="text-3xl md:text-4xl font-extrabold font-sans text-on-surface">Digital Accessibility Overwatch</h2>
+                        <p class="text-base md:text-lg text-on-surface-variant leading-relaxed">
+                            Practical training to help OPD leaders, educators, and local government officials in Lumbini and Madhesh understand digital accessibility and identify common barriers.
+                        </p>
+                        <ul class="space-y-3.5 text-base md:text-lg text-slate-700">
+                            <li class="flex items-start gap-3">
+                                <span
+                                    class="material-symbols-outlined text-secondary text-2xl flex-shrink-0 mt-0.5">check_circle</span>
+                                <span>Hands-on website accessibility checks</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <span
+                                    class="material-symbols-outlined text-secondary text-2xl flex-shrink-0 mt-0.5">check_circle</span>
+                                <span>Checking screen readers and digital documents</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <span
+                                    class="material-symbols-outlined text-secondary text-2xl flex-shrink-0 mt-0.5">check_circle</span>
+                                <span>Creating more accessible public notices</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <span
+                                    class="material-symbols-outlined text-secondary text-2xl flex-shrink-0 mt-0.5">check_circle</span>
+                                <span>Encouraging local efforts to monitor digital accessibility</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Who We Work With (Concise Grid - White background) -->
+        <section class="py-16 md:py-24 bg-white border-b border-slate-200/80" id="partners">
+            <div class="max-w-7xl mx-auto px-6 md:px-12">
+                <div class="max-w-xl mb-12">
+                    <h2 class="text-3xl md:text-4xl font-extrabold font-sans text-on-surface mt-1.5">Who We Work With</h2>
+                    <p class="text-base md:text-lg text-on-surface-variant mt-2">Sustainable accessibility requires co-ownership
+                        across civil society.</p>
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div
+                        class="p-6 rounded-2xl border border-slate-200 bg-slate-50/60 hover:bg-white hover:border-slate-300 hover:shadow-sm transition-all">
+                        <h3 class="font-sans font-bold text-lg md:text-xl text-on-surface mb-2">OPDs &amp; Advocates</h3>
+                        <p class="text-sm md:text-base text-slate-600 leading-relaxed">Peer-to-peer partnerships across provincial disabled
+                            people's organizations.</p>
+                    </div>
+                    <div
+                        class="p-6 rounded-2xl border border-slate-200 bg-slate-50/60 hover:bg-white hover:border-slate-300 hover:shadow-sm transition-all">
+                        <h3 class="font-sans font-bold text-lg md:text-xl text-on-surface mb-2">Communities &amp; Families</h3>
+                        <p class="text-sm md:text-base text-slate-600 leading-relaxed">Listening to self-advocates, youth, and caregivers
+                            navigating access daily.</p>
+                    </div>
+                    <div
+                        class="p-6 rounded-2xl border border-slate-200 bg-slate-50/60 hover:bg-white hover:border-slate-300 hover:shadow-sm transition-all">
+                        <h3 class="font-sans font-bold text-lg md:text-xl text-on-surface mb-2">Schools &amp; Universities</h3>
+                        <p class="text-sm md:text-base text-slate-600 leading-relaxed">Equipping educators and students with accessible
+                            learning materials.</p>
+                    </div>
+                    <div
+                        class="p-6 rounded-2xl border border-slate-200 bg-slate-50/60 hover:bg-white hover:border-slate-300 hover:shadow-sm transition-all">
+                        <h3 class="font-sans font-bold text-lg md:text-xl text-on-surface mb-2">Public Bodies &amp; Municipalities</h3>
+                        <p class="text-sm md:text-base text-slate-600 leading-relaxed">Auditing citizen portals, public services, and
+                            building statutory standards.</p>
+                    </div>
+                    <div
+                        class="p-6 rounded-2xl border border-slate-200 bg-slate-50/60 hover:bg-white hover:border-slate-300 hover:shadow-sm transition-all">
+                        <h3 class="font-sans font-bold text-lg md:text-xl text-on-surface mb-2">Development Partners</h3>
+                        <p class="text-sm md:text-base text-slate-600 leading-relaxed">Integrating disability inclusion directly into social
+                            development initiatives.</p>
+                    </div>
+                    <div
+                        class="p-6 rounded-2xl border border-slate-200 bg-slate-50/60 hover:bg-white hover:border-slate-300 hover:shadow-sm transition-all">
+                        <h3 class="font-sans font-bold text-lg md:text-xl text-on-surface mb-2">Tech Teams &amp; Researchers</h3>
+                        <p class="text-sm md:text-base text-slate-600 leading-relaxed">Collaborating with software designers, translators,
+                            and NSL specialists.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- CTA Section (Primary Color background) -->
+        <section class="py-16 md:py-24 bg-primary text-center">
+            <div class="max-w-4xl mx-auto px-6 md:px-12 space-y-7">
+                <h2 class="text-3xl md:text-4xl font-extrabold font-sans text-white">
+                    Interested in Collaborating with Us?
+                </h2>
+                <p class="text-base md:text-xl text-purple-100 max-w-2xl mx-auto leading-relaxed">
+                    Whether you represent an organization, work in education or research, or simply want to support inclusion, we welcome your ideas and partnership.
+                </p>
+                <div class="pt-3 flex flex-wrap justify-center gap-4">
+                    <a class="inline-flex items-center justify-center h-14 px-8 rounded-xl bg-white text-primary font-sans text-base font-bold hover:bg-slate-100 shadow-md hover:shadow-lg transition-all"
+                        href="get-involved.html">
+                        Work With Us
+                        <span class="material-symbols-outlined ml-2 text-xl">arrow_forward</span>
+                    </a>
+                    <a class="inline-flex items-center justify-center h-14 px-8 rounded-xl border-2 border-white/80 text-white font-sans text-base font-bold hover:bg-white/10 transition-all shadow-sm"
+                        href="contact.html">
+                        Contact Us
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!-- Dark Footer -->
+    <footer class="bg-slate-900 text-white border-t border-slate-800 mt-auto">
+        <div
+            class="max-w-7xl mx-auto px-6 py-12 md:px-12 flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
+            <div>
+                <div class="bg-white px-3 py-1.5 rounded-xl inline-block shadow-sm">
+                    <img alt="Diverse Patterns Institute for Inclusion" class="h-8 w-auto"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuBTe_alG-i_mPQO66NN1PKQ1j9rz8rGcPWYOn0bNqjwWmgBoFQpIWtDq-EbBAc5YJUVAOumwlsUGCjFFwtXSOjHS-xEUAxuwtaHCrASsOnCD_LYgp1esnhieG_gc6vCtFd3OVdRPnQrfH6uDfDbE7WFRRMFJdNQ7VXwQ46q9KBG52oN-fXk_KfGoArgXj2Le-_FFeuE1yiVmtYZWCnmKlHe3ewho6O0_GuF9Wnz76-XqNk-xqMfhdUIf63mMk3IUYFDios">
+                </div>
+            </div>
+            <nav class="flex flex-wrap gap-6 font-sans text-sm font-semibold text-white">
+                <a class="text-white hover:text-slate-300 transition-colors" href="index.html">Home</a>
+                <a class="text-white hover:text-slate-300 transition-colors" href="about.html">About Us</a>
+                <a class="text-white hover:text-slate-300 transition-colors" href="what-we-do.html">What We Do</a>
+                <a class="text-white hover:text-slate-300 transition-colors" href="get-involved.html">Get Involved</a>
+                <a class="text-white hover:text-slate-300 transition-colors" href="contact.html">Contact Us</a>
+            </nav>
+        </div>
+        <div class="border-t border-slate-800 py-6 px-6 md:px-12 flex flex-col sm:flex-row justify-between items-center gap-4 text-center sm:text-left text-sm text-white">
+            <p>© 2025 Diverse Patterns Institute for Inclusion</p>
+            <div class="flex flex-wrap items-center justify-center gap-6 text-sm">
+                <a class="text-white hover:text-slate-300 transition-colors" href="mailto:info@diversepatterns.org.np">info@diversepatterns.org.np</a>
+                <span class="text-slate-500 hidden sm:inline" aria-hidden="true">•</span>
+                <a class="text-white hover:text-slate-300 transition-colors" href="https://www.diversepatterns.org.np" target="_blank" rel="noopener">www.diversepatterns.org.np</a>
+            </div>
+        </div>
+    </footer>
+    <!-- Main Scripts -->
+    <script src="assets/js/script.js"></script>
+
+
+</body>
+
+</html>

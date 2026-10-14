@@ -1,0 +1,402 @@
+/* Diverse Patterns Institute for Inclusion - Styles */
+
+/* Increased Base Font Size */
+html {
+    font-size: 18px;
+}
+
+:focus-visible {
+    outline: 3px solid #0284c7 !important;
+    outline-offset: 3px !important;
+}
+
+.handdrawn-line {
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+/* Accessible, clear borders for form inputs */
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+select,
+textarea {
+    border: 1.5px solid #cbd5e1 !important; /* clear slate-300 border */
+    background-color: #ffffff !important;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+input[type="text"]:hover,
+input[type="email"]:hover,
+input[type="tel"]:hover,
+select:hover,
+textarea:hover {
+    border-color: #94a3b8 !important; /* darker on hover */
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="tel"]:focus,
+select:focus,
+textarea:focus {
+    border-color: #840076 !important; /* primary purple on focus */
+    box-shadow: 0 0 0 3px rgba(132, 0, 118, 0.15) !important;
+    outline: none !important;
+}
+
+/* Material symbols vertical alignment */
+.material-symbols-outlined {
+    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    vertical-align: middle;
+}
+
+/* ========================================================
+   SUBTLE ANIMATIONS & MICRO-INTERACTIONS
+   ======================================================== */
+
+/* 1. Scroll-triggered entrance reveal */
+.reveal-on-scroll {
+    opacity: 0;
+    transform: translateY(16px);
+    transition: opacity 0.55s cubic-bezier(0.16, 1, 0.3, 1), transform 0.55s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: opacity, transform;
+}
+
+.reveal-on-scroll.is-revealed {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* 2. Interactive Card lift & hover transitions */
+.card-bordered,
+.card-interactive,
+.grid > div.rounded-2xl {
+    transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.25s ease;
+}
+
+.card-bordered:hover,
+.card-interactive:hover,
+.grid > div.rounded-2xl:hover {
+    transform: translateY(-3px);
+}
+
+/* 3. Button & Link micro-interactions */
+a.bg-primary, button.bg-primary,
+a.bg-secondary, button.bg-secondary,
+a[class*="bg-primary"], a[class*="bg-secondary"] {
+    transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+a.bg-primary:hover, button.bg-primary:hover,
+a.bg-secondary:hover, button.bg-secondary:hover,
+a[class*="bg-primary"]:hover, a[class*="bg-secondary"]:hover {
+    transform: translateY(-1.5px);
+}
+
+a.bg-primary:active, button.bg-primary:active,
+a.bg-secondary:active, button.bg-secondary:active {
+    transform: translateY(0px) scale(0.99);
+}
+
+/* Arrow nudge on hover inside buttons and links */
+.material-symbols-outlined {
+    transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+a:hover .material-symbols-outlined[class*="arrow_forward"],
+button:hover .material-symbols-outlined[class*="arrow_forward"] {
+    transform: translateX(4px);
+}
+
+/* Navigation items smooth transitions */
+header nav a {
+    transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+/* Accessibility utility button transitions */
+#toggle-font-size,
+#toggle-contrast {
+    transition: transform 0.15s ease, background-color 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+#toggle-font-size:hover,
+#toggle-contrast:hover {
+    transform: translateY(-1px);
+}
+
+#toggle-font-size:active,
+#toggle-contrast:active {
+    transform: translateY(0);
+}
+
+/* 4. Decorative hand-drawn wavy underline reveal */
+@keyframes waveStrokeIn {
+    from {
+        stroke-dashoffset: 240;
+    }
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+svg path[d*="M3 8 C 30 2"] {
+    stroke-dasharray: 240;
+    stroke-dashoffset: 0;
+    animation: waveStrokeIn 1.2s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+}
+
+/* 5. Accessible Motion (prefers-reduced-motion) */
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+    .reveal-on-scroll {
+        opacity: 1 !important;
+        transform: none !important;
+    }
+    svg path[d*="M3 8 C 30 2"] {
+        animation: none !important;
+        stroke-dashoffset: 0 !important;
+    }
+}
+
+/* ========================================================
+   HIGH CONTRAST MODE (Black Background, Yellow Text, White Images)
+   ======================================================== */
+html.high-contrast,
+html.high-contrast body {
+    background-color: #000000 !important;
+    color: #ffff00 !important;
+}
+
+/* Remove all drop shadows in high contrast for maximum crispness */
+html.high-contrast * {
+    box-shadow: none !important;
+    text-shadow: none !important;
+}
+
+html.high-contrast ::selection {
+    background-color: #ffff00 !important;
+    color: #000000 !important;
+}
+
+html.high-contrast :focus-visible {
+    outline: 3px solid #ffffff !important;
+    outline-offset: 3px !important;
+}
+
+/* Layout containers & backgrounds */
+html.high-contrast main,
+html.high-contrast header,
+html.high-contrast footer,
+html.high-contrast section,
+html.high-contrast nav,
+html.high-contrast aside,
+html.high-contrast article {
+    background-color: #000000 !important;
+    border-color: #ffff00 !important;
+}
+
+html.high-contrast [class*="bg-"] {
+    background-color: #000000 !important;
+    border-color: #ffff00 !important;
+}
+
+/* Text overrides in High Contrast */
+html.high-contrast h1,
+html.high-contrast h2,
+html.high-contrast h3,
+html.high-contrast h4,
+html.high-contrast h5,
+html.high-contrast h6,
+html.high-contrast p,
+html.high-contrast span,
+html.high-contrast blockquote,
+html.high-contrast label,
+html.high-contrast li,
+html.high-contrast strong,
+html.high-contrast em,
+html.high-contrast b,
+html.high-contrast i,
+html.high-contrast small,
+html.high-contrast div,
+html.high-contrast [class*="text-"] {
+    color: #ffff00 !important;
+}
+
+/* Material Icons */
+html.high-contrast .material-symbols-outlined {
+    color: #ffff00 !important;
+}
+
+/* Hand-drawn SVG lines & doodles */
+html.high-contrast svg {
+    color: #ffff00 !important;
+}
+html.high-contrast svg path {
+    stroke: #ffff00 !important;
+}
+html.high-contrast svg circle {
+    fill: #ffff00 !important;
+    stroke: #ffff00 !important;
+}
+
+/* Links */
+html.high-contrast a {
+    color: #ffff00 !important;
+    text-decoration: underline !important;
+}
+
+html.high-contrast a:hover,
+html.high-contrast a:focus {
+    color: #ffffff !important;
+    background-color: #1a1a1a !important;
+}
+
+/* Buttons & CTA Highlights */
+html.high-contrast a.bg-primary,
+html.high-contrast a.bg-white,
+html.high-contrast button[type="submit"],
+html.high-contrast a[class*="bg-primary"],
+html.high-contrast .btn-contrast-highlight {
+    background-color: #ffff00 !important;
+    color: #000000 !important;
+    border: 2px solid #ffff00 !important;
+    text-decoration: none !important;
+    font-weight: 700 !important;
+}
+
+html.high-contrast a.bg-primary *,
+html.high-contrast a.bg-white *,
+html.high-contrast button[type="submit"] * {
+    color: #000000 !important;
+}
+
+html.high-contrast a.bg-primary:hover,
+html.high-contrast a.bg-white:hover,
+html.high-contrast button[type="submit"]:hover {
+    background-color: #000000 !important;
+    color: #ffff00 !important;
+    border: 2px solid #ffff00 !important;
+}
+
+html.high-contrast a.bg-primary:hover *,
+html.high-contrast a.bg-white:hover *,
+html.high-contrast button[type="submit"]:hover * {
+    color: #ffff00 !important;
+}
+
+/* Outlined buttons */
+html.high-contrast a.border-2,
+html.high-contrast a.border {
+    background-color: #000000 !important;
+    color: #ffff00 !important;
+    border: 2px solid #ffff00 !important;
+    text-decoration: none !important;
+}
+
+html.high-contrast a.border-2:hover,
+html.high-contrast a.border:hover {
+    background-color: #ffff00 !important;
+    color: #000000 !important;
+}
+
+html.high-contrast a.border-2:hover *,
+html.high-contrast a.border:hover * {
+    color: #000000 !important;
+}
+
+/* Cards & containers */
+html.high-contrast .card-bordered,
+html.high-contrast .form-bordered,
+html.high-contrast div.rounded-2xl,
+html.high-contrast div.rounded-xl {
+    border: 2px solid #ffff00 !important;
+    background-color: #000000 !important;
+}
+
+/* Form Inputs in High Contrast */
+html.high-contrast input[type="text"],
+html.high-contrast input[type="email"],
+html.high-contrast input[type="tel"],
+html.high-contrast select,
+html.high-contrast textarea {
+    background-color: #000000 !important;
+    color: #ffff00 !important;
+    border: 2px solid #ffff00 !important;
+}
+
+html.high-contrast input::placeholder,
+html.high-contrast textarea::placeholder {
+    color: #eab308 !important;
+    opacity: 0.9 !important;
+}
+
+html.high-contrast input:focus,
+html.high-contrast select:focus,
+html.high-contrast textarea:focus {
+    border-color: #ffffff !important;
+    outline: 3px solid #ffffff !important;
+    box-shadow: none !important;
+}
+
+/* Images & Media in High Contrast */
+/* 1. Brand Logos in header and footer: invert white background to black, text to crisp white */
+html.high-contrast header img,
+html.high-contrast footer img,
+html.high-contrast img[src*="aida-public"] {
+    filter: invert(1) !important;
+    background-color: transparent !important;
+}
+
+/* Ensure footer logo container background is transparent in high contrast */
+html.high-contrast footer .bg-white {
+    background-color: transparent !important;
+    border: none !important;
+}
+
+/* 2. Content Photos (Hero photo, Featured Project photo, etc.): clear high-contrast monochrome, no flat white blocks */
+html.high-contrast main img {
+    filter: grayscale(100%) contrast(110%) !important;
+    border: 2px solid #ffff00 !important;
+}
+
+html.high-contrast main div:has(> img) {
+    background-color: #000000 !important;
+    border-color: #ffff00 !important;
+}
+
+/* Top utility buttons */
+html.high-contrast #toggle-contrast,
+html.high-contrast #toggle-font-size {
+    background-color: #000000 !important;
+    color: #ffff00 !important;
+    border: 2px solid #ffff00 !important;
+}
+
+html.high-contrast #toggle-contrast.contrast-active {
+    background-color: #ffff00 !important;
+    color: #000000 !important;
+}
+
+html.high-contrast #toggle-contrast.contrast-active span {
+    color: #000000 !important;
+}
+
+/* Disable all animations and transforms in high contrast mode */
+html.high-contrast *,
+html.high-contrast *::before,
+html.high-contrast *::after {
+    animation: none !important;
+    transform: none !important;
+    transition: none !important;
+}
+
+html.high-contrast .reveal-on-scroll {
+    opacity: 1 !important;
+    transform: none !important;
+}
+
